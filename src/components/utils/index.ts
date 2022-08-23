@@ -64,3 +64,24 @@ class ObjectFactory {
 }
 
 export default ObjectFactory;
+export { drawCircle };
+
+
+// draw circle of radius given r and the canvas ctx
+/**
+ * 
+ * @param xPosition 
+ * @param yPosition 
+ * @param radius 
+ * @param color 
+ * @param ctx 
+ */
+const drawCircle = (xPosition: number, yPosition: number, radius: number, color: string, ctx: CanvasRenderingContext2D) => {
+  ctx.beginPath();
+  ctx.arc(xPosition, yPosition, radius, 0, Math.PI * 2, false);
+  ctx.fillStyle = color;
+  ctx.fill();
+  ctx.lineWidth = 5;
+  ctx.strokeStyle = color;
+  ctx.stroke();
+}

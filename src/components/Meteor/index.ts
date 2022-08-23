@@ -1,7 +1,7 @@
 import GameObject from "../GameObject";
 import Master from "../Master";
 import { Color, Position, Size, Angle, Radius, Sign } from "../types/generals";
-
+import { drawCircle } from "../utils/index";
 
 /**
  * TODO: 
@@ -90,8 +90,8 @@ class Meteor extends GameObject {
   }
 
   render(ctx: CanvasRenderingContext2D) {
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.xTransformation, this.yTransformation, this.size.w, this.size.h);
+    // just draw a circle of the desired color
+    drawCircle(this.xTransformation, this.yTransformation, 0.03, this.color, ctx);
   }
 }
 

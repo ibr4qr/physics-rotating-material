@@ -8,4 +8,7 @@ The aims is to have multiple Animation for plain objects rotating following fun 
 
 for now we have only a elliptic orbit, which is cool but a bit boring.
 
-
+**Items include**:
+- Creating a test folder in the root directory
+- Demo Webpack configuration
+- User Friendly Adjustments for better experience in using this lib

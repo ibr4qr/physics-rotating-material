@@ -85,6 +85,7 @@ class Game {
   }
 
   update(elapsed: number) {
+    this.master.update(elapsed);
     this.meteors.forEach(meteor => meteor.update(elapsed));
   }
 

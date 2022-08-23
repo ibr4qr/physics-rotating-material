@@ -58,14 +58,14 @@ class Meteor extends GameObject {
   /* update the current meteor position */
   update(elapsed: number) {
     const aRatio = 1 * this.ratio;
-    const bRation = 1 / this.ratio;
+    const bRatio = 1 / this.ratio;
 
     // color of the meteor ( maybe this should me generated randomically ?? )
     
     let xPosition = (this.radius * Math.cos(this.theta)) / aRatio;
-    let yPosition = (this.radius * Math.sin(this.theta)) / bRation;
+    let yPosition = (this.radius * Math.sin(this.theta)) / bRatio;
 
-    // applying a rotation to the plane with a linear tranformation 
+    // applying a rotation (β) to the plane the meteor is rotating on 
 
     /*
       [

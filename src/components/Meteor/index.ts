@@ -36,13 +36,13 @@ class Meteor extends GameObject {
     canvas: HTMLCanvasElement,
     p: Position,
     s: Size,
-    c: string,
+    c: string, // this should of type Color, but for it's ok String Type
     radius: Radius,
     theta: Angle,
     master: Master,
     ratio: number,
     beta: number,
-    sign: Sign
+    sign: Sign // 1 | -1
   ) {
     super(p, s, c);
     this.radius = radius;

@@ -14,3 +14,4 @@ for now we have only a elliptic orbit, which is cool but a bit boring.
 - User Friendly Adjustments for better experience in using this lib
 - postCSS for CSS-in-JS
 - consider using Vite
+- adding linting and prettier pre-commit husky actions

@@ -12,3 +12,5 @@ for now we have only a elliptic orbit, which is cool but a bit boring.
 - Creating a test folder in the root directory
 - Demo Webpack configuration
 - User Friendly Adjustments for better experience in using this lib
+- postCSS for CSS-in-JS
+- consider using Vite

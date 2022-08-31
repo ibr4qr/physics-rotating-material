@@ -15,3 +15,4 @@ for now we have only a elliptic orbit, which is cool but a bit boring.
 - postCSS for CSS-in-JS
 - consider using Vite
 - adding linting and prettier pre-commit husky actions
+- Make a class for linear transformations

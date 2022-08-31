@@ -2,7 +2,7 @@ import GameObject from "../GameObject";
 import Master from "../Master";
 import { Color, Position, Size, Angle, Radius, Sign } from "../types/generals";
 import { drawCircle } from "../utils/index";
-
+import LinearTransform from "../utils/linear-transform";
 /**
  * TODO: 
  * Someone may declare a master that wants somehow to listen to user input
@@ -67,23 +67,15 @@ class Meteor extends GameObject {
 
     // applying a rotation (β) to the plane the meteor is rotating on 
 
-    /*
-      [
-        cos β -sin β
-        sin β cos β
-      ]
-    */
 
+    const { x, y} = LinearTransform.rotation2D(xPosition, yPosition, this.beta);
 
     // can we make better ?? 
     this.xTransformation =
-      this.masterRef.position.x +
-      (xPosition * Math.cos(this.beta) + yPosition * Math.sin(this.beta));
+      this.masterRef.position.x  + x;
 
     this.yTransformation =
-      this.masterRef.position.y +
-      -1 * xPosition * Math.sin(this.beta) +
-      yPosition * Math.cos(this.beta);
+      this.masterRef.position.y + y;
     
     // update theta 
     this.theta += this.sign * (0.0002 * this.radius);

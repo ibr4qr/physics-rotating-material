@@ -22,15 +22,19 @@ const rotationalMatrix = (theta: number) => {
 
 
 class LinearTransform {
-    static VectorMatrixProduct(matrix: object, vector: object) {
+    static VectorMatrixProduct(matrix: any, vector: any) {
         // here we don't generalize and suppose the input is a 2x2 matrix and bidimensional vector in the cartesian plane
-        const newVector = {};
+        const newVector = [];
 
         for(let i = 0; i < 2; i++) {
+            let coordinate = 0;
             for(let j = 0; j < 2; j++) {
-                console.log(matrix);
+               coordinate += matrix[i][j]() * vector[j];
             }
-        }        
+            newVector.push(coordinate);
+        } 
+        
+        return newVector;
     }
 
     /* Linear Tranformation rappresented with a simple rotational matrix */
@@ -47,13 +51,12 @@ class LinearTransform {
        * @param theta angle by which the vector (x, y) will rotated 
        */
     static rotation2D(xPosition: number, yPosition: number, theta: number) {
-        // this.VectorMatrixProduct(rotationalMatrix(theta), )
+        const [x, y] = this.VectorMatrixProduct(rotationalMatrix(theta), [xPosition, yPosition]);
 
-        console.log(JSON.stringify(rotationalMatrix(theta)));
 
         return {
-            x: (xPosition * Math.cos(theta) - yPosition * Math.sin(theta)),
-            y: xPosition * Math.sin(theta) + yPosition * Math.cos(theta)
+            x,
+            y
         }
     }   
 }

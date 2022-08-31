@@ -19,7 +19,7 @@ class Game {
 
 
   constructor() {
-    console.log("Program Initialized...");
+    // console.log("Program Initialized...");
   }
 
 

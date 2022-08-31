@@ -28,7 +28,7 @@ class Master extends GameObject {
 
 
   update(elapsed: number) {
-    console.log(this);
+    // console.log(this);
     // drawCircle(this.mouseXPosition, this.mouseYPosition, 10, "red", );
   }
 }

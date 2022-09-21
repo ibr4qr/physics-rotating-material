@@ -1,8 +1,26 @@
 {
   "name": "rotational-rajectories",
+  "author": "Ibrahim Qronfli",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Particle in movement ",
+  "license": "MIT",
+  "keywords": [
+    "Physics",
+    "Orientation",
+    "Dynamics"
+  ],
+  "bugs":{
+    "url":"https://github.com/ibr4qr/physics-rotating-material/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibr4qr/physics-rotating-material"
+  },
+  "bin": {},
+  "files":[
+    "./dist",
+    "./types"
+  ],
   "scripts": {
     "test": "echo \"hello world\"",
     "watch": "webpack --watch",
@@ -11,11 +29,10 @@
     "docs": "serve ./docs",
     "lint":"eslint src/**/* --fix",
     "prepare": "husky install",
-    "posttest":"echo \"change me\""
+    "posttest":"echo \"change me\"",
+    "declaration":"tsc --emitDeclarationOnly --outDir ./types"
   },
-  "keywords": [],
-  "author": "Ibrahim Qronfli",
-  "license": "MIT",
+
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",

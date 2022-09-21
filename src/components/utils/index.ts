@@ -63,7 +63,6 @@ class ObjectFactory {
 }
 
 export default ObjectFactory
-export { drawCircle }
 
 // draw circle of radius given r and the canvas ctx
 /**
@@ -83,3 +82,5 @@ const drawCircle = (xPosition: number, yPosition: number, radius: number, color:
   ctx.strokeStyle = color
   ctx.stroke()
 }
+
+export { drawCircle }

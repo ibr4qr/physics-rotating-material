@@ -13,10 +13,6 @@ class Game {
   private master: Master = null
   private meteors: Meteor[] = []
 
-  constructor () {
-    // console.log("Program Initialized...");
-  }
-
   /* mounting everything on the DOM */
   Mount () {
     this.canvas = <HTMLCanvasElement>(
@@ -49,6 +45,7 @@ class Game {
     // some perfomance measurements
     let A = 0
     let B = 0
+    /* eslint-disable  */
     let FPS = 0
     let elapsed = 0
 

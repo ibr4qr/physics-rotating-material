@@ -1,6 +1,6 @@
 import GameObject from '../GameObject'
 import Master from '../Master'
-import { Color, Position, Size, Angle, Radius, Sign } from '../types/generals'
+import { Position, Size, Angle, Radius, Sign } from '../types/generals'
 import { drawCircle } from '../utils/index'
 import LinearTransform from '../utils/linear-transform'
 /**

@@ -1,6 +1,5 @@
 import GameObject from '../GameObject'
 import { Color, Size } from '../types/generals'
-import { drawCircle } from '../utils'
 
 class Master extends GameObject {
   mouseXPosition: number = 0.0

@@ -1,4 +1,4 @@
-import { Color, Position, Size } from './types/generals'
+import { Position, Size } from './types/generals'
 
 class GameObject {
   public position: Position

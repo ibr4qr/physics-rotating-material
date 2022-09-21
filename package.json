@@ -1,5 +1,5 @@
 {
-  "name": "Rotational Trajectories",
+  "name": "rotational-rajectories",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
     "build": "webpack --config webpack.prod.js",
     "start": "webpack serve --open --config webpack.dev.js",
     "docs": "serve ./docs",
+    "lint":"eslint src/**/* --fix",
     "prepare": "husky install"
   },
   "keywords": [],

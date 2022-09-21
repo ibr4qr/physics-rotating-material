@@ -1,110 +1,98 @@
-import Factory from "./components/Factory";
-import Master from "./components/Master";
-import Meteor from "./components/Meteor";
-import ObjectFactory from "./components/utils";
+import Factory from './components/Factory'
+import Master from './components/Master'
+import Meteor from './components/Meteor'
+import ObjectFactory from './components/utils'
 
-import "./style/App.css";
+import './style/App.css'
 
-
-
-const __METEORS = 200;
+const __METEORS = 200
 
 class Game {
-  private canvas: HTMLCanvasElement = null;
-  private ctx: CanvasRenderingContext2D = null;
-  private master: Master = null;
-  private meteors: Meteor[] = [];
+  private canvas: HTMLCanvasElement = null
+  private ctx: CanvasRenderingContext2D = null
+  private master: Master = null
+  private meteors: Meteor[] = []
 
-
-
-
-  constructor() {
+  constructor () {
     // console.log("Program Initialized...");
   }
 
-
-
   /* mounting everything on the DOM */
-  Mount() {
+  Mount () {
     this.canvas = <HTMLCanvasElement>(
-      Factory.createElement("canvas", null, "canvas")
-    );
+      Factory.createElement('canvas', null, 'canvas')
+    )
 
-    this.canvas.classList.add("game-container");
-    this.canvas.height = innerHeight;
-    this.canvas.width = innerWidth;
+    this.canvas.classList.add('game-container')
+    this.canvas.height = innerHeight
+    this.canvas.width = innerWidth
 
-    this.ctx = this.canvas.getContext("2d");
+    this.ctx = this.canvas.getContext('2d')
 
-    Factory.mountElement(document.body, this.canvas);
+    Factory.mountElement(document.body, this.canvas)
   }
 
-  Init() {
-    this.Mount();
-    this.master = new Master(this.canvas, { w: 10, h: 10 }, "#e63946");
+  Init () {
+    this.Mount()
+    this.master = new Master(this.canvas, { w: 10, h: 10 }, '#e63946')
     for (let i = 0; i < __METEORS; i++) {
-      const meteor = ObjectFactory.GetMeteor(this.canvas, this.master);
+      const meteor = ObjectFactory.GetMeteor(this.canvas, this.master)
 
-      this.meteors.push(meteor);
+      this.meteors.push(meteor)
     }
-    this.report();
-    this.gameLoop();
+    this.report()
+    this.gameLoop()
   }
 
-  gameLoop() {
-    // TODO: 
-      // some perfomance measurements
-      let A = 0;
-      let B = 0;
-      let FPS = 0;
-      let elapsed = 0;
+  gameLoop () {
+    // TODO:
+    // some perfomance measurements
+    let A = 0
+    let B = 0
+    let FPS = 0
+    let elapsed = 0
 
     const step = (deltaTime: number) => {
-      B = deltaTime;
-      
-      
+      B = deltaTime
+
       // clean the scene
-      this.ctx.fillStyle = "rgba(0,0,0,0.05)";
-      this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+      this.ctx.fillStyle = 'rgba(0,0,0,0.05)'
+      this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
 
-      // update and render gameObjects 
-      this.update(elapsed);
-      this.render();
-      
-      FPS = (B - A) / 1000;
-      elapsed = 1000 / (B - A);
+      // update and render gameObjects
+      this.update(elapsed)
+      this.render()
 
+      FPS = (B - A) / 1000
+      elapsed = 1000 / (B - A)
 
+      A = B
+      requestAnimationFrame(step)
+    }
 
-
-      A = B;
-      requestAnimationFrame(step);
-    };
-
-    requestAnimationFrame(step);
+    requestAnimationFrame(step)
   }
 
-  update(elapsed: number) {
-    this.master.update(elapsed);
-    this.meteors.forEach(meteor => meteor.update(elapsed));
+  update (elapsed: number) {
+    this.master.update(elapsed)
+    this.meteors.forEach(meteor => meteor.update(elapsed))
   }
 
-  render() {
-    this.master.render(this.ctx);
-    this.meteors.forEach((meteor) => meteor.render(this.ctx));
+  render () {
+    this.master.render(this.ctx)
+    this.meteors.forEach((meteor) => meteor.render(this.ctx))
   }
 
-  report() {
-
+  report () {
     console.log(
-      "%cgithub: https://github.com/ibrahim855",
-      "color: whitesmoke; background-color:#e76f51; padding: 2em 1em;"
-    );
+      '%cgithub: https://github.com/ibrahim855',
+      'color: whitesmoke; background-color:#e76f51; padding: 2em 1em;'
+    )
     console.log(
-      "%cCurrently working at: Inceptium SRLS",
-      "color: whitesmoke; background-color:#e76f51; padding: 1em 1em;"
-    );
+      '%cCurrently working at: Inceptium SRLS',
+      'color: whitesmoke; background-color:#e76f51; padding: 1em 1em;'
+    )
   }
 }
 
-new Game().Init();
+new Game().Init()

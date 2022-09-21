@@ -1,20 +1,19 @@
-import Master from "../Master";
-import Meteor from "../Meteor";
+import Master from '../Master'
+import Meteor from '../Meteor'
 
 /**
  * simple procedure for pseudo random color generator
  * took in the CSS Tricks website :)
  */
 
- function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+function getRandomColor () {
+  const letters = '0123456789ABCDEF'
+  let color = '#'
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)]
   }
-  return color;
+  return color
 }
-
 
 type Random = {
   (min: number, max: number): number;
@@ -22,35 +21,35 @@ type Random = {
 };
 
 const randomize: Random = (min: number, max?: number) => {
-  let maxx = min;
+  const maxx = min
 
   if (max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+    return Math.floor(Math.random() * (max - min)) + min
   }
 
-  return Math.floor(Math.random() * maxx);
-};
+  return Math.floor(Math.random() * maxx)
+}
 
 type Sign = -1 | 1;
 
 const CoinFlip = () => {
-  const number = randomize(-1000.0, 1000.0);
-  const sign: Sign = <Sign>(number / Math.abs(number));
-  return sign;
-};
+  const number = randomize(-1000.0, 1000.0)
+  const sign: Sign = <Sign>(number / Math.abs(number))
+  return sign
+}
 
 class ObjectFactory {
-  static GetMeteor(canvas: HTMLCanvasElement, master: Master) {
-    CoinFlip();
+  static GetMeteor (canvas: HTMLCanvasElement, master: Master) {
+    CoinFlip()
     return new Meteor(
       canvas /* canvas ref */,
       {
         x: randomize(10, 20),
-        y: randomize(10, 20),
+        y: randomize(10, 20)
       } /* position of the  */,
       {
         w: 2,
-        h: 2,
+        h: 2
       }, /* size of meteor */
       getRandomColor(), // color
       randomize(20, 50), // radius between x and y
@@ -58,30 +57,29 @@ class ObjectFactory {
       master, // master ref since all meteors position is relative to this super massive meteor
       0.3, // ratio of the circonference
       randomize(0.0, 1000.28), // angle by which each individual meteor plane is rotated (θ)
-      CoinFlip(), // direction of the rotation 
-    );
+      CoinFlip() // direction of the rotation
+    )
   }
 }
 
-export default ObjectFactory;
-export { drawCircle };
-
+export default ObjectFactory
+export { drawCircle }
 
 // draw circle of radius given r and the canvas ctx
 /**
- * 
- * @param xPosition 
- * @param yPosition 
- * @param radius 
- * @param color 
- * @param ctx 
+ *
+ * @param xPosition
+ * @param yPosition
+ * @param radius
+ * @param color
+ * @param ctx
  */
 const drawCircle = (xPosition: number, yPosition: number, radius: number, color: string, ctx: CanvasRenderingContext2D) => {
-  ctx.beginPath();
-  ctx.arc(xPosition, yPosition, radius, 0, Math.PI * 2, false);
-  ctx.fillStyle = color;
-  ctx.fill();
-  ctx.lineWidth = 5;
-  ctx.strokeStyle = color;
-  ctx.stroke();
+  ctx.beginPath()
+  ctx.arc(xPosition, yPosition, radius, 0, Math.PI * 2, false)
+  ctx.fillStyle = color
+  ctx.fill()
+  ctx.lineWidth = 5
+  ctx.strokeStyle = color
+  ctx.stroke()
 }

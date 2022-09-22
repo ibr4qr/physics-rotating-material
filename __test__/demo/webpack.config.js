@@ -3,7 +3,7 @@ const sysPath = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: ".__test__/demo/index.js",
+    entry: "./__test__/demo/index.js",
     output: {
         path: __dirname + "/dist",
         publicPath: "/",

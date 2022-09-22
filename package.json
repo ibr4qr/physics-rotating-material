@@ -30,7 +30,8 @@
     "lint":"eslint src/**/* --fix",
     "prepare": "husky install",
     "posttest":"echo \"change me\"",
-    "declaration":"tsc --emitDeclarationOnly --outDir ./types"
+    "declaration":"tsc --emitDeclarationOnly --outDir ./types",
+    "demo": "webpack-dev-server --config ./__test__/demo/webpack.config.js --mode development"
   },
 
   "devDependencies": {

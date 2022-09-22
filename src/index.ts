@@ -92,9 +92,4 @@ class Game {
   }
 }
 
-new Game().Init()
-
-
-export default {
-  name: 'ibrahim'
-};
+export default Game;

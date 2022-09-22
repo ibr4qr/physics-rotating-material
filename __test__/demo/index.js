@@ -1,3 +1,2 @@
-import Subject from '../../src/index.ts';
-
-console.log('hello world');
+import Game from '../../src/index'
+console.log(Game)

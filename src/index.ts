@@ -93,3 +93,8 @@ class Game {
 }
 
 new Game().Init()
+
+
+export default {
+  name: 'ibrahim'
+};

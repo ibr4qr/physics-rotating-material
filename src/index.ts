@@ -100,3 +100,14 @@ class Motion {
 }
 
 export default Motion;
+
+
+
+export class DrawCanvas {
+  constructor(container: HTMLBodyElement, w: number, h: number) {
+    const canvas = document.createElement('canvas');
+    canvas.height = h;
+    canvas.width = w;
+    container.appendChild(canvas);
+  }
+}

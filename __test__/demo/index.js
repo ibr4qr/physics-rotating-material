@@ -1,2 +1,3 @@
-import Game from '../../src/index'
-console.log(Game)
+import Motion from '../../src/index'
+
+new Motion(window.innerWidth, window.innerHeight).Init()

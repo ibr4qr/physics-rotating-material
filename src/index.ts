@@ -7,11 +7,20 @@ import './style/App.css'
 
 const __METEORS = 200
 
-class Game {
+
+class Motion {
   private canvas: HTMLCanvasElement = null
   private ctx: CanvasRenderingContext2D = null
   private master: Master = null
   private meteors: Meteor[] = []
+  private height: number = 0;
+  private width: number = 0;
+
+
+  constructor(w: number = 200, h: number = 200) {
+    this.height = h;
+    this.width = w;
+  }
 
   /* mounting everything on the DOM */
   Mount () {
@@ -20,8 +29,8 @@ class Game {
     )
 
     this.canvas.classList.add('game-container')
-    this.canvas.height = innerHeight
-    this.canvas.width = innerWidth
+    this.canvas.height = this.height
+    this.canvas.width = this.width
 
     this.ctx = this.canvas.getContext('2d')
 
@@ -92,4 +101,4 @@ class Game {
   }
 }
 
-export default Game;
+export default Motion;

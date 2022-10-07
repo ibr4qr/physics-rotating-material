@@ -7,19 +7,17 @@ import './style/App.css'
 
 const __METEORS = 200
 
-
 class Motion {
   private canvas: HTMLCanvasElement = null
   private ctx: CanvasRenderingContext2D = null
   private master: Master = null
   private meteors: Meteor[] = []
-  private height: number = 0;
-  private width: number = 0;
+  private height: number = 0
+  private width: number = 0
 
-
-  constructor(w: number = 200, h: number = 200) {
-    this.height = h;
-    this.width = w;
+  constructor (w: number = 200, h: number = 200) {
+    this.height = h
+    this.width = w
   }
 
   /* mounting everything on the DOM */

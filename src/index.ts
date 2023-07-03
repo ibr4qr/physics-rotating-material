@@ -89,11 +89,11 @@ class Motion {
 
   report () {
     console.log(
-      '%cgithub: https://github.com/ibrahim855',
+      '%cgithub: https://github.com/ibr4qr',
       'color: whitesmoke; background-color:#e76f51; padding: 2em 1em;'
     )
     console.log(
-      '%cCurrently working at: Inceptium SRLS',
+      '%cCurrently working at: Alten Italy',
       'color: whitesmoke; background-color:#e76f51; padding: 1em 1em;'
     )
   }
